@@ -12,6 +12,7 @@ class Game{
     Team *away;
     Game(Team & home ,Team & away) : home(&home) , away(&away){};
     void points_in_game()const;
-    void winner_losser()const;   
+    void winner_losser()const; 
+    void print_game();  
 
 };
