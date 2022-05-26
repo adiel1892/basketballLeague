@@ -2,16 +2,16 @@
 #include <random>
 #include <iostream>
 using namespace std;
-Game::Game(Team & home ,Team & away){
-    this->home = &home;
-    this->away = &away;
-}
+// Game::Game(Team & home ,Team & away){
+//     this->home = &home;
+//     this->away = &away;
+// }
 
-void Game::points_in_game(){
+void Game::points_in_game()const{
     random_device rd;
     mt19937 gen(rd());
-    uniform_int_distribution<> away_team(50,100);
-    uniform_int_distribution<> home_team(55,100);
+    uniform_int_distribution<> away_team(min_away_points,max_points);
+    uniform_int_distribution<> home_team(min_home_points,max_points);
     this->away->points_in_curr_game += away_team(gen);
     this->home->points_in_curr_game += home_team(gen);
 
@@ -29,7 +29,7 @@ void Game::points_in_game(){
  
 }
 
-void Game::winner_losser(){
+void Game::winner_losser()const{
     if(this->home->points_in_curr_game > this->away->points_in_curr_game){
         // home team won
         this->home->wins++;

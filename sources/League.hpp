@@ -6,12 +6,12 @@
 class League{
 
     public:
-        vector<Team*>* teams;
-        vector<string> headers_of_league(int places);
+        std::vector<Team*>* teams;
+        std::vector<std::string> headers_of_league(int places);
         int longest_wins_strike();
         int longest_losses_strike();
         int positive_points_teams();
-        vector<string> relegation_teams();
-        string most_points_team();
-        string lowest_points_team();
+        std::vector<std::string> relegation_teams();
+        std::string most_points_team();
+        std::string lowest_points_team();
 };
