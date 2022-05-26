@@ -1,11 +1,10 @@
 #pragma once
-// using namespace std;
 #include <string>
 
 class Team{
     public:
         std::string name;
-        double talent = 0;
+        double talent = rand();
         int wins = 0;
         int losses = 0;
         int positive_points = 0;
