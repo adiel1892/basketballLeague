@@ -20,12 +20,5 @@ int main(){
     // srand((unsigned) time(0));
     double r = talent(gen);
     cout << r << endl;
-    cout << round(r * 10) << endl;
 
-
-
-    // srand((unsigned) time(0));
-    // for (int i = 0; i < 20; ++i) {
-    //         cout << (float)rand() / (float)RAND_MAX << endl;
-    // }
 }

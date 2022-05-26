@@ -3,6 +3,7 @@
 constexpr int min_away_points = 50;
 constexpr int min_home_points = 55;
 constexpr int max_points = 100;
+constexpr int mul_talent = 10;
 
 
 class Game{   

@@ -17,10 +17,10 @@ void Game::points_in_game()const{
     // away team gets a random number of points between (50,100)
     int away_points = away_team(gen);
     // adding to both teams their talent points with the formula - round(talent * 10)
-    int home_talent_extra = round(this->home->talent * 10);
-    int away_talent_extra = round(this->away->talent * 10);
-    this->away->points_in_curr_game += away_points + away_talent_extra;
-    this->home->points_in_curr_game += home_points + home_talent_extra;
+    double home_talent_extra = round(this->home->talent * mul_talent);
+    double away_talent_extra = round(this->away->talent * mul_talent);
+    this->away->points_in_curr_game += away_points + (int)away_talent_extra;
+    this->home->points_in_curr_game += home_points + (int)home_talent_extra;
 
 
 

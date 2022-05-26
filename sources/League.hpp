@@ -2,12 +2,14 @@
 #include "Team.hpp"
 #include "Game.hpp"
 #include <vector>
+using namespace std;
 
 class League{
 
     public:
-        std::vector<Team*>* teams;
-        std::vector<std::string> headers_of_league(int places);
+        vector<Team*>* teams;
+
+        vector<string> headers_of_league(int places);
         int longest_wins_strike();
         int longest_losses_strike();
         int positive_points_teams();
