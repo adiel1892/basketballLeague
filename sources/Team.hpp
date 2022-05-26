@@ -1,16 +1,18 @@
 #pragma once
+// using namespace std;
 #include <string>
 
 class Team{
     public:
-        string name;
-        double talent;
-        int wins;
-        int losses;
-        int positive_points;
-        int negative_points;
-        int curr_win_strike;
-        int curr_loss_strike;
-        Team(const string & name);
+        std::string name;
+        double talent = 0;
+        int wins = 0;
+        int losses = 0;
+        int positive_points = 0;
+        int negative_points = 0;
+        int curr_win_strike = 0;
+        int curr_loss_strike = 0;
+        int points_in_curr_game = 0;
+        Team(const std::string & name) : name(name){};
 
 };  
