@@ -18,7 +18,10 @@ int main(){
     std::uniform_real_distribution<> talent(0,1.0);
     // cout << away_team(gen) << endl;
     // srand((unsigned) time(0));
-    cout << talent(gen) << endl;
+    double r = talent(gen);
+    cout << r << endl;
+    cout << round(r * 10) << endl;
+
 
 
     // srand((unsigned) time(0));
