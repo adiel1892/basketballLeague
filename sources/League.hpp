@@ -35,8 +35,10 @@ class League{
         int longest_wins_strike();
         int longest_losses_strike();
         int positive_points_teams();
-        std::vector<std::string> relegation_teams();
-        std::string most_points_team();
-        std::string lowest_points_team();
+        // std::vector<std::string> relegation_teams();
+        string most_positive_points_team();
+        string lowest_positive_points_team();
+        string most_negative_points_team();
+        string lowest_negative_points_team();
         void print_teams_with_talent();
 };
