@@ -2,10 +2,6 @@
 #include <random>
 #include <iostream>
 using namespace std;
-// Game::Game(Team & home ,Team & away){
-//     this->home = &home;
-//     this->away = &away;
-// }
 
 void Game::points_in_game()const{
     random_device rd;
@@ -22,19 +18,10 @@ void Game::points_in_game()const{
     this->away->points_in_curr_game += away_points + (int)away_talent_extra;
     this->home->points_in_curr_game += home_points + (int)home_talent_extra;
 
-
-
-
     this->home->positive_points += this->home->points_in_curr_game;
     this->home->negative_points += this->away->points_in_curr_game;
     this->away->positive_points += this->away->points_in_curr_game;
     this->away->negative_points += this->home->points_in_curr_game;
-
-    // now clear the points from the curr game
-    this->home->points_in_curr_game = 0;
-    this->away->points_in_curr_game = 0;
-
- 
 }
 
 void Game::winner_losser()const{
@@ -53,4 +40,7 @@ void Game::winner_losser()const{
         // draw
 
     }
+    // now clear the points from the curr game
+    this->home->points_in_curr_game = 0;
+    this->away->points_in_curr_game = 0;
 }
