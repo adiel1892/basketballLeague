@@ -29,12 +29,17 @@ void Game::winner_losser()const{
         // home team won
         this->home->wins++;
         this->away->losses++;
+        this->home->curr_win_strike++;
+        this->away->update_win_strike();
+        this->home->update_loss_strike();
         
 
     }else if(this->home->points_in_curr_game < this->away->points_in_curr_game){
         // away team won
         this->away->wins++;
         this->home->losses++;
+        this->home->update_win_strike();
+        this->away->update_loss_strike();
 
     }else{
         // draw
