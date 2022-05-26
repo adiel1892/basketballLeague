@@ -14,6 +14,7 @@ class Team{
         int points_in_curr_game = 0;
         int longest_wins_strike = 0;
         int longest_losses_strike = 0;
+        int diff_points = 0;
         Team(const string & name) : name(name){};
         void give_talent();
         void update_win_strike();
