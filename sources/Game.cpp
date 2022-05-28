@@ -23,28 +23,22 @@ void Game::points_in_game()const{
     this->away->negative_points += this->home->points_in_curr_game;
 }
 
-void Game::winner_losser()const{
+void Game::winner_loser()const{
     if(this->home->points_in_curr_game > this->away->points_in_curr_game){
         // home team won
-        this->home->team_won();
-        this->away->team_lost();
+        this->update_winner_loser(*home , *away);
     }else if(this->home->points_in_curr_game < this->away->points_in_curr_game){
         // away team won
-        this->away->team_won();
-        this->home->team_lost();
-
+        this->update_winner_loser(*away , *home);
     }else{
         // draw
         if(this->home->curr_win_strike > this->away->curr_win_strike){
-            this->home->team_won();
-            this->away->team_lost();
+            this->update_winner_loser(*home , *away);
         }else if(this->home->curr_win_strike < this->away->curr_win_strike){
-            this->away->team_won();
-            this->home->team_lost();
+            this->update_winner_loser(*away , *home);
         }else{
             // draw , and both with same wins strike - give the advantage to the away team.
-            this->away->team_won();
-            this->home->team_lost();
+            this->update_winner_loser(*away , *home);
         }
     }
     // now clear the points from the curr game
@@ -58,5 +52,11 @@ void Game::print_game()const{
 
 void Game::start_game()const{
     this->points_in_game();
-    this->winner_losser();
+    this->winner_loser();
+}
+
+// The first team won , the second team lost.
+void Game::update_winner_loser(Team & winner , Team & loser)const{
+    winner.team_won();
+    loser.team_lost();
 }
