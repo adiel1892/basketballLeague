@@ -1,16 +1,20 @@
 #include "Schedule.hpp"
 #include <iostream>
+constexpr int first_round = 19;
+constexpr unsigned int two = 2;
+
+
 using namespace std;
 
 
 Schedule::Schedule(League & league){
     this->league = &league;
-    this->matches_per_round = league.teams->size() / 2;
-    this->num_teams = league.teams->size();
-    this->rounds = (this->num_teams - 1) * 2;
+    this->matches_per_round = league.teams->size() / two;
+    this->num_teams = (unsigned int) league.teams->size();
+    this->rounds = (this->num_teams - 1) * two;
     for(unsigned int round = 0; round < this->rounds; round++){
         for(unsigned int match = 0; match < this->matches_per_round; match++){
-            if(round + 1 <= 19){
+            if(round + 1 <= first_round){
                 unsigned int home = (round + match) % ((unsigned int)this->num_teams - 1);
                 unsigned int away = ((unsigned int)this->num_teams - 1 - match + round) % ((unsigned int)this->num_teams - 1);
                 if(match == 0){

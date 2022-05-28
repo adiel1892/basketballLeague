@@ -13,7 +13,7 @@ class Game{
     Game(Team & home ,Team & away) : home(&home) , away(&away){};
     void points_in_game()const;
     void winner_losser()const; 
-    void print_game();  
-    void start_game();
+    void print_game()const;  
+    void start_game()const;
 
 };

@@ -4,13 +4,13 @@
 using namespace std;
 
 
-void League::print_teams_with_talent(){
+void League::print_teams_with_talent()const{
     for(unsigned int i = 0; i < this->teams->size(); i++){
         cout << i + 1 << ") " << this->teams->at(i)->name << " - " << this->teams->at(i)->talent << endl;
     }
 }
 
-int League::longest_wins_strike(){
+int League::longest_wins_strike()const{
     int res = 0;
     unsigned int index = 0;
     for(unsigned int i = 0; i < this->teams->size(); i++){
@@ -23,7 +23,7 @@ int League::longest_wins_strike(){
     return res;
 }
 
-int League::longest_losses_strike(){
+int League::longest_losses_strike()const{
     int res = 0;
     unsigned int index = 0;
     for(unsigned int i = 0; i < this->teams->size(); i++){
@@ -36,7 +36,7 @@ int League::longest_losses_strike(){
     return res;
 }
 
-int League::positive_points_teams(){
+int League::positive_points_teams()const{
     int res = 0;
     for(unsigned int i = 0; i < this->teams->size(); i++){
         if(this->teams->at(i)->positive_points - this->teams->at(i)->negative_points > 0){
@@ -47,7 +47,7 @@ int League::positive_points_teams(){
     return res;
 }
 
-string League::most_positive_points_team(){
+string League::most_positive_points_team()const{
     int points = this->teams->at(0)->positive_points;
     unsigned int res = 0;
     for(unsigned int i = 0; i < this->teams->size(); i++){
@@ -60,7 +60,7 @@ string League::most_positive_points_team(){
     return this->teams->at(res)->name;
 }
 
-string League::lowest_positive_points_team(){
+string League::lowest_positive_points_team()const{
     int points = this->teams->at(0)->positive_points;
     unsigned int res = 0;
     for(unsigned int i = 0; i < this->teams->size(); i++){
@@ -73,7 +73,7 @@ string League::lowest_positive_points_team(){
     return this->teams->at(res)->name;
 }
 
-string League::most_negative_points_team(){
+string League::most_negative_points_team()const{
     int points = this->teams->at(0)->negative_points;
     unsigned int res = 0;
     for(unsigned int i = 0; i < this->teams->size(); i++){
@@ -86,7 +86,7 @@ string League::most_negative_points_team(){
     return this->teams->at(res)->name;
 }
 
-string League::lowest_negative_points_team(){
+string League::lowest_negative_points_team()const{
     int points = this->teams->at(0)->negative_points;
     unsigned int res = 0;
     for(unsigned int i = 0; i < this->teams->size(); i++){
@@ -111,14 +111,14 @@ bool compare_teams(Team *a , Team *b){
     }
 }
 
-void League::show_table_when_season_over(){
+void League::show_table_when_season_over()const{
     sort(this->teams->begin() , this->teams->end() ,compare_teams);
     for(unsigned int i = 0; i < this->teams->size(); i++){
         cout << i + 1 << ") " << this->teams->at(i)->name <<  " , wins: " << this->teams->at(i)->wins << " , difference: " << this->teams->at(i)->positive_points - this->teams->at(i)->negative_points << endl;
     }
 }
 
-void League::print_top_teams(unsigned int top){
+void League::print_top_teams(unsigned int top)const{
     cout << "Top " << top << " teams:" << endl;
     for(unsigned int i = 0; i < top; i++){
         cout << i + 1 << ") " << this->teams->at(i)->name << endl;

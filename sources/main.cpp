@@ -4,20 +4,15 @@
 #include "Team.hpp"
 #include "League.hpp"
 #include "Schedule.hpp"
-#include <iostream>
+constexpr int top = 5;
 using namespace std;
 
-
-
 int main(){
-    cout << "working until now" << endl;
     League league{};
-    // league.print_teams_with_talent();
-    // cout << league.longest_losses_strike() << endl;
     Schedule sch(league);
     sch.run_the_season();
     league.show_table_when_season_over();
-    league.print_top_teams(5);
+    league.print_top_teams(top);
     league.longest_wins_strike();
     league.longest_losses_strike();
     league.most_positive_points_team();

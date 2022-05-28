@@ -8,9 +8,9 @@ class Schedule{
 
     public:
     League *league;
-    int rounds;
+    unsigned int rounds;
     int matches_per_round;
-    int num_teams = 0;
+    unsigned int num_teams = 0;
     vector<vector<Game>> matches;
     vector<Game> round_number;
     Schedule(League & league);

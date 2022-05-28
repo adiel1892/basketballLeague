@@ -7,9 +7,10 @@ using namespace std;
 class Team;
 class League{
 
+
     public:
         League(){
-            if(this->nba_teams_names.size() != 20){
+            if(this->nba_teams_names.size() != num_of_teams){
                 throw invalid_argument("There must be 20 teams in the league");
             }
             this->teams = new vector<Team*>[num_of_teams];
@@ -32,14 +33,14 @@ class League{
         "Memphis Grizzlies" , "San Antonio Spurs"};
         vector<Team*>* teams;
         vector<string> headers_of_league(int places);
-        int longest_wins_strike();
-        int longest_losses_strike();
-        int positive_points_teams();
-        string most_positive_points_team();
-        string lowest_positive_points_team();
-        string most_negative_points_team();
-        string lowest_negative_points_team();
-        void print_teams_with_talent();
-        void show_table_when_season_over();
-        void print_top_teams(unsigned int top);
+        int longest_wins_strike()const;
+        int longest_losses_strike()const;
+        int positive_points_teams()const;
+        string most_positive_points_team()const;
+        string lowest_positive_points_team()const;
+        string most_negative_points_team()const;
+        string lowest_negative_points_team()const;
+        void print_teams_with_talent()const;
+        void show_table_when_season_over()const;
+        void print_top_teams(unsigned int top)const;
 };

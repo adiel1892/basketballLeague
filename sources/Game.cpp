@@ -52,11 +52,11 @@ void Game::winner_losser()const{
     this->away->points_in_curr_game = 0;
 }
 
-void Game::print_game(){
+void Game::print_game()const{
     cout << this->home->name << "VS. " << this->away->name << endl;
 }
 
-void Game::start_game(){
+void Game::start_game()const{
     this->points_in_game();
     this->winner_losser();
 }
