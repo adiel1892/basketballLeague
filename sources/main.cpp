@@ -19,11 +19,6 @@ int main(){
     league.lowest_positive_points_team();
     league.most_negative_points_team();
     league.lowest_negative_points_team();
-    
-    
-
-    
-
-
+   
 
 }

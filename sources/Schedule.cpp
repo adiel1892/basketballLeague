@@ -47,7 +47,7 @@ void Schedule::print_schedule(){
         for(unsigned int round = 0; round < this->rounds; round++){
             cout << "round number " << round + 1 << ":" << endl;
             for(unsigned int match = 0; match < this->matches_per_round; match++){
-                cout << this->matches[round][match].home->name << " VS. " << this->matches[round][match].away->name << endl; 
+                this->matches[round][match].print_game();
             }
         }
 }
@@ -55,7 +55,7 @@ void Schedule::print_schedule(){
 void Schedule::print_matches_in_round(unsigned int round){
     cout << "round number " << round << ":" << endl;
     for(unsigned int match = 0; match < this->matches_per_round; match++){
-        cout << this->matches[round - 1][match].home->name << " VS. " << this->matches[round - 1][match].away->name << endl; 
+        this->matches[round - 1][match].print_game();
     }
 }
 
