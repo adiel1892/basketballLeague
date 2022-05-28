@@ -26,14 +26,14 @@ void Team::update_loss_strike(){
     this->curr_loss_strike = 0;
 }
 
-bool Team::operator<(Team & other){
-    if(this->wins < other.wins){
-        return true;
-    }else if(this->wins < other.wins){
-        return false;
-    }else if(this->positive_points - this->negative_points < other.positive_points - other.negative_points){
-        return true;
-    }else{
-        return false;
-    }
+void Team::team_won(){
+    this->wins++;
+    this->curr_win_strike++;
+    this->update_loss_strike();
+}
+
+void Team::team_lost(){
+    this->losses++;
+    this->curr_loss_strike++;
+    this->update_win_strike();
 }
