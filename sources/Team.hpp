@@ -19,5 +19,6 @@ class Team{
         void give_talent();
         void update_win_strike();
         void update_loss_strike();
+        bool operator<(Team & other);
         
 };  

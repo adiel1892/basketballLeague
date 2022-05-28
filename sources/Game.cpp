@@ -53,3 +53,8 @@ void Game::winner_losser()const{
 void Game::print_game(){
     cout << this->home->name << "VS" << this->away->name << endl;
 }
+
+void Game::start_game(){
+    this->points_in_game();
+    this->winner_losser();
+}

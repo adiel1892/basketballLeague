@@ -4,9 +4,7 @@ using namespace std;
 
 
 Schedule::Schedule(League & league){
-    cout << "GOT TO HERE - ctructor" << endl;
     this->league = &league;
-    this->league->print_teams_with_talent();
     this->matches_per_round = league.teams->size() / 2;
     this->num_teams = league.teams->size();
     this->rounds = (this->num_teams - 1) * 2;
@@ -54,5 +52,13 @@ void Schedule::print_matches_in_round(unsigned int round){
     cout << "round number " << round << ":" << endl;
     for(unsigned int match = 0; match < this->matches_per_round; match++){
         cout << this->matches[round - 1][match].home->name << " VS. " << this->matches[round - 1][match].away->name << endl; 
+    }
+}
+
+void Schedule::run_the_season(){
+    for(unsigned int round = 0; round < this->rounds; round++){
+        for(unsigned int match = 0; match < this->matches_per_round; match++){
+           this->matches[round][match].start_game();
+        }
     }
 }

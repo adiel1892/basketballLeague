@@ -14,5 +14,6 @@ class Game{
     void points_in_game()const;
     void winner_losser()const; 
     void print_game();  
+    void start_game();
 
 };

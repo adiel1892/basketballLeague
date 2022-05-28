@@ -41,4 +41,5 @@ class League{
         string most_negative_points_team();
         string lowest_negative_points_team();
         void print_teams_with_talent();
+        void show_table_when_season_over();
 };

@@ -16,4 +16,5 @@ class Schedule{
     Schedule(League & league);
     void print_schedule();
     void print_matches_in_round(unsigned int round);
+    void run_the_season();
 };

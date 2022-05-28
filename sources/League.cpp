@@ -1,5 +1,6 @@
 #include "League.hpp"
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 
@@ -85,4 +86,23 @@ string League::lowest_negative_points_team(){
         }
     }
     return this->teams->at(res)->name;
+}
+
+bool compare_teams(Team *a , Team *b){
+    if(a->wins > b->wins){
+        return true;
+    }else if(a->wins < b->wins){
+        return false;
+    }else if(a->positive_points - a->negative_points > b->positive_points - b->negative_points){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+void League::show_table_when_season_over(){
+    sort(this->teams->begin() , this->teams->end() ,compare_teams);
+    for(unsigned int i = 0; i < this->teams->size(); i++){
+        cout << i + 1 << ") " << this->teams->at(i)->name <<  " , wins: " << this->teams->at(i)->wins << " , difference: " << this->teams->at(i)->positive_points - this->teams->at(i)->negative_points << endl;
+    }
 }

@@ -12,11 +12,12 @@ using namespace std;
 int main(){
     cout << "working until now" << endl;
     League league{};
-    league.print_teams_with_talent();
-    cout << league.longest_losses_strike() << endl;
+    // league.print_teams_with_talent();
+    // cout << league.longest_losses_strike() << endl;
     Schedule sch(league);
-    sch.print_schedule();
-    sch.print_matches_in_round(38);
+    sch.run_the_season();
+    league.show_table_when_season_over();
+    
 
     
 
