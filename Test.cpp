@@ -18,6 +18,9 @@ TEST_CASE(){
     CHECK(sch.num_teams == 20);
     CHECK(sch.matches_per_round == 10);    
     sch.run_the_season();
+    for(unsigned int i = 0; i < league.teams->size(); i++){
+        CHECK(league.teams->at(i)->talent >= 0 && league.teams->at(i)->talent <= 1)
+    }
 
 
 }

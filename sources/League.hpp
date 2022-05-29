@@ -6,8 +6,6 @@ constexpr int num_of_teams = 20;
 using namespace std;
 class Team;
 class League{
-
-
     public:
         League(){
             if(this->nba_teams_names.size() != num_of_teams){
